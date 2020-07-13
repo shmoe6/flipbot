@@ -5,13 +5,16 @@ import com.github.shmoe6.commands.ICommand;
 import com.github.shmoe6.commands.command.HelpCommand;
 import com.github.shmoe6.commands.command.TestCommand;
 import com.github.shmoe6.commands.command.auctions.AHInfoCommand;
+import com.github.shmoe6.commands.command.players.PlayerLevelCommand;
 import com.jagrosh.jdautilities.examples.command.PingCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 public class CommandManager {
@@ -20,7 +23,12 @@ public class CommandManager {
     public CommandManager() {
         addCommand(new TestCommand());
         addCommand(new HelpCommand(this));
+
+        //Auctions
         addCommand(new AHInfoCommand());
+
+        //Player
+        addCommand(new PlayerLevelCommand());
     }
 
     private void addCommand(ICommand cmd) {
@@ -50,7 +58,7 @@ public class CommandManager {
         return null;
     }
 
-    void handle(GuildMessageReceivedEvent event) {
+    void handle(GuildMessageReceivedEvent event) throws ExecutionException, InterruptedException, IOException {
         String[] split = event.getMessage().getContentRaw()
                 .replaceFirst("(?i)" + Pattern.quote(Config.get("prefix")), "")
                 .split("\\s+");

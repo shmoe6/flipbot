@@ -2,6 +2,9 @@ package com.github.shmoe6;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import zone.nora.slothpixel.Slothpixel;
+import zone.nora.slothpixel.skyblock.auctions.SkyblockAuction;
+import zone.nora.slothpixel.skyblock.auctions.bids.SkyblockAuctionBid;
 
 import javax.security.auth.login.LoginException;
 
