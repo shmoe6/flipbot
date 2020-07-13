@@ -1,0 +1,28 @@
+plugins {
+    id'java'
+    id'application'
+    id'com.github.johnrengelman.shadow' version '4.0.4'
+}
+
+mainClassName = 'com.github.shmoe6.Bot'
+
+version '1.0'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile group: 'net.dv8tion', name: 'JDA', version: '4.0.0_44'
+    compile group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.1'
+    compile group: 'me.duncte123', name: 'botCommons', version: '1.0.45'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.1.1'
+    implementation 'com.github.HypixelDev.PublicAPI:Example:2.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+compileJava.options.encoding = 'UTF-8'
