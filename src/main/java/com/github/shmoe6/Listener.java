@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Listener extends ListenerAdapter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
     private final CommandManager manager = new CommandManager();
 
     @Override

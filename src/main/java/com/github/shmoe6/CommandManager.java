@@ -5,8 +5,7 @@ import com.github.shmoe6.commands.ICommand;
 import com.github.shmoe6.commands.command.HelpCommand;
 import com.github.shmoe6.commands.command.TestCommand;
 import com.github.shmoe6.commands.command.auctions.AHInfoCommand;
-import com.github.shmoe6.commands.command.players.PlayerLevelCommand;
-import com.jagrosh.jdautilities.examples.command.PingCommand;
+import com.github.shmoe6.commands.command.players.PlayerUUIDCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -28,7 +27,7 @@ public class CommandManager {
         addCommand(new AHInfoCommand());
 
         //Player
-        addCommand(new PlayerLevelCommand());
+        addCommand(new PlayerUUIDCommand());
     }
 
     private void addCommand(ICommand cmd) {
